@@ -1,0 +1,52 @@
+body {
+  text-align: center;
+  font: 100% Optima;
+  color: #333;
+  background: url("../assets/images/background.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100% auto;
+  background-attachment: fixed; }
+
+.container {
+  text-align: center; }
+
+span.alert-danger {
+  background-color: transparent; }
+
+button.btn.btn-default {
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px; }
+
+h1 {
+  /* WebKit (Safari/Chrome) Only */
+  -webkit-text-stroke: 1px white;
+  /* If we weren't using text-shadow, we'd set a fallback color
+     and use this to set color instead
+    -webkit-text-fill-color: white; */
+  color: black;
+  text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+  /* visited link */
+  /* mouse over link */
+  /* selected link */ }
+  h1 a:link {
+    color: black; }
+  h1 a:visited {
+    color: black; }
+  h1 a:hover {
+    color: black; }
+  h1 a:active {
+    color: black; }
+
+table.recipes {
+  margin-top: 10px; }
+
+.center-table {
+  margin: 0 auto !important;
+  float: none !important; }
+
+.header {
+  margin-bottom: 10px; }

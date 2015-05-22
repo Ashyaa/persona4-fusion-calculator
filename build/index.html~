@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	
+	<head>
+		<title>Persona 4 Fusion Calculator</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+		<script src="/js/bundle.js"></script>			
+	</head>
+	
+	<body>
+	
+		<h1><a ng-href="/#/">Persona 4 Fusion Calculator</a></h1>
+		
+		
+			<div class="container"> 
+
+				<div ng-view></div>
+
+			</div> 
+
+		
+		
+	
+	</body>
+</html>

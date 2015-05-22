@@ -1,0 +1,28 @@
+{
+  "name": "persona-4-fusion-calculator",
+  "version": "10.3.1",
+  "description": "A little web app to know how to fuse which Persona you want in Persona 4",
+  "author": "Maxime Mongodin <mongodinma@eisti.eu>",
+  "devDependencies": {
+    "browserify": "^10.1.0",
+    "browserify-shim": "^3.8.6",
+    "connect-livereload": "^0.5.3",
+    "debowerify": "^0.7.1",
+    "express": "^4.12.3",
+    "gulp": "^3.8.11",
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-embedlr": "^0.5.2",
+    "gulp-jshint": "^1.10.0",
+    "gulp-livereload": "^3.8.0",
+    "gulp-util": "^3.0.4",
+    "tiny-lr": "^0.1.5"
+  },
+  "browserify": {
+    "transform": ["browserify-shim"]
+  },
+  "dependencies": {
+    "angular-router-browserify": "0.0.2"
+  }
+}

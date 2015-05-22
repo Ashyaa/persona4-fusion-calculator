@@ -1,0 +1,29 @@
+<div id="header">
+	<label>Filter : 
+		<input class="" ng-model="search" type="text" name="search" size="30"></input>
+	</label>
+			
+	<button class="btn btn-default" ng-click="search = ''">Clear</button>	
+</div>
+
+<table class="center-table">
+	<thead ng-init="order = 'name'">
+		<td>
+			<b><a href ng-click="order = 'level'">Rank</a></b>
+		</td>
+		<td>
+			<b><a href ng-click="order = 'name'">Name</a></b>
+		</td>
+		<td>
+			<b><a href ng-click="order = 'arcana'">Arcana</a></b>
+		</td>
+	</thead>
+	
+	<tbody>
+		<tr ng-repeat="persona in personae | filter: search | orderBy: order">
+			<td>{{persona.level}}</td>
+			<td><a ng-href="#/persona/{{persona.name}}">{{persona.name}}</a></td>
+			<td>{{persona.arcana}}</td>
+		</tr>	
+	</tbody>
+</table>

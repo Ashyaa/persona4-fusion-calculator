@@ -13,11 +13,11 @@
 </div>
 
 <div ng-show="pagesNumber >= 1" class="ng-show header" ng-init="pageNum = 0">	
-	<span ng-click="pageNum = 0">
+	<span ng-click="pageNum = 0" class="pagination">
 		<span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
 	</span>
 	
-	<span ng-click="(pageNum == 0) || (pageNum = pageNum - 1)">
+	<span ng-click="(pageNum == 0) || (pageNum = pageNum - 1)" class="pagination">
 		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 	</span>
 
@@ -28,11 +28,11 @@
 		{{Math.floor((recipes|filter:search).length / 100) + 1}}
 	</span>
 	
-	<span ng-click="(pageNum == pagesNumber) || (pageNum = pageNum + 1)">
+	<span ng-click="(pageNum == pagesNumber) || (pageNum = pageNum + 1)" class="pagination">
 		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 	</span>
 	
-	<span ng-click="pageNum = pagesNumber">
+	<span ng-click="pageNum = pagesNumber" class="pagination">
 		<span class="glyphicon glyphicon-forward" aria-hidden="true"></span>
 	</span>
 </div>

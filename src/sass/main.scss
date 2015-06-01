@@ -49,24 +49,28 @@ h1 {
     1px -1px 0 #FFF,
    -1px  1px 0 #FFF,
     1px  1px 0 #FFF;
-    
+
     a:link {
-    color: black;
+      color: black;
+      text-decoration: none;
     }
     
     /* visited link */
     a:visited {
         color: black;
+        text-decoration: none;
     }
     
     /* mouse over link */
     a:hover {
         color: black;
+        text-decoration: none;
     }
     
     /* selected link */
     a:active {
         color: black;
+        text-decoration: none;
     }
 }
   
@@ -83,4 +87,9 @@ table.recipes {
 
 .header {
   margin-bottom: 10px;
+}
+
+.pagination{
+  cursor: pointer;
+  cursor: hand;
 }

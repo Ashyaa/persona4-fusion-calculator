@@ -20,8 +20,8 @@ I will update this for the upcoming Persona 5, I just need to create new data.
 ---
 
 1. Install NodeJS with NPM [https://nodejs.org](https://nodejs.org)
-2. Install global npm packages: `npm install -g bower`
-3. Clone this repo from `git@github.com:Heimdall409/persona4-fusion-calculator.git`
+2. Install global npm packages: `npm install -g bower` `npm install -g bower` (you may need to sudo them)
+3. Clone this repo from `https://github.com/Heimdall409/persona4-fusion-calculator.git`
 2. Run `npm install` from the root directory (you may need to sudo it)
 2. Run `bower install` from the root directory
 3. Run `gulp dev`

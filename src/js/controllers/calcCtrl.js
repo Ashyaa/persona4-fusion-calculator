@@ -2,11 +2,10 @@
 
 var calcCtrl = function($scope, $routeParams, calcService) {
 
-   console.log(calcService.getPersonaByName(''));
    $scope.wantedPersona = calcService.getPersonaByName($routeParams.persona_name);
    $scope.recipes = [];
 
-   if($scope.wantedPersona.special){     
+   if($scope.wantedPersona.special){
 
      calcService.getSpecialCombo($scope);
 
@@ -19,9 +18,8 @@ var calcCtrl = function($scope, $routeParams, calcService) {
 
      //Triangle Fusion results added to $scope.recipes
      calcService.resultsTriangleFusion($scope, wantedPersonaArcana);
-     
-     $scope.Math = window.Math;
 
+     $scope.Math = window.Math;
    }
 };
 

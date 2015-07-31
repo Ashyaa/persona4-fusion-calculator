@@ -1,7 +1,7 @@
 // Derived from:
 //   http://www.gamefaqs.com/ps2/945498-shin-megami-tensei-persona-4/faqs/54981
 //   http://www.gamefaqs.com/ps2/945498-shin-megami-tensei-persona-4/faqs/54981
-//   All credit for this data goes to the author of the original calculator : http://arantius.github.io/persona-fusion-calculator/4.html#/list/arcana 
+//   All credit for this data goes to the author of the original calculator : http://arantius.github.io/persona-fusion-calculator/4.html#/list/arcana
 
 'use strict';
 
@@ -417,14 +417,14 @@ var arcana2Combos = [
     {'source': ['Moon',       'Moon',       ], 'result': 'Moon'        },
     {'source': ['Moon',       'Sun',        ], 'result': 'Strength'    },
     {'source': ['Sun',        'Sun',        ], 'result': 'Sun'         },
-    {'source': ['Judgement',  'Judgement',  ], 'result': 'Judge'       },
+    {'source': ['Judgement',  'Judgement',  ], 'result': 'Judgement'   },
     ];
 
 var arcana3Combos = [
     {'source': ['Magician',   'Fool',       ], 'result': 'Fortune'     },
     {'source': ['Priestess',  'Fool',       ], 'result': 'Lovers'      },
     {'source': ['Priestess',  'Magician',   ], 'result': 'Fortune'     },
-    {'source': ['Empress',    'Fool',       ], 'result': 'Judge'       },
+    {'source': ['Empress',    'Fool',       ], 'result': 'Judgement'   },
     {'source': ['Empress',    'Magician',   ], 'result': 'Sun'         },
     {'source': ['Empress',    'Priestess',  ], 'result': 'Temperance'  },
     {'source': ['Emperor',    'Fool',       ], 'result': 'Empress'     },
@@ -432,7 +432,7 @@ var arcana3Combos = [
     {'source': ['Emperor',    'Priestess',  ], 'result': 'Justice'     },
     {'source': ['Emperor',    'Empress',    ], 'result': 'Fool'        },
     {'source': ['Heirophant', 'Fool',       ], 'result': 'Tower'       },
-    {'source': ['Heirophant', 'Magician',   ], 'result': 'Judge'       },
+    {'source': ['Heirophant', 'Magician',   ], 'result': 'Judgement'   },
     {'source': ['Heirophant', 'Priestess',  ], 'result': 'Empress'     },
     {'source': ['Heirophant', 'Empress',    ], 'result': 'Priestess'   },
     {'source': ['Heirophant', 'Emperor',    ], 'result': 'Chariot'     },
@@ -447,7 +447,7 @@ var arcana3Combos = [
     {'source': ['Chariot',    'Priestess',  ], 'result': 'Magician'    },
     {'source': ['Chariot',    'Empress',    ], 'result': 'Emperor'     },
     {'source': ['Chariot',    'Emperor',    ], 'result': 'Tower'       },
-    {'source': ['Chariot',    'Heirophant', ], 'result': 'Judge'       },
+    {'source': ['Chariot',    'Heirophant', ], 'result': 'Judgement'   },
     {'source': ['Chariot',    'Lovers',     ], 'result': 'Heirophant'  },
     {'source': ['Justice',    'Fool',       ], 'result': 'Chariot'     },
     {'source': ['Justice',    'Magician',   ], 'result': 'Chariot'     },
@@ -466,7 +466,7 @@ var arcana3Combos = [
     {'source': ['Hermit',     'Lovers',     ], 'result': 'Heirophant'  },
     {'source': ['Hermit',     'Chariot',    ], 'result': 'Priestess'   },
     {'source': ['Hermit',     'Justice',    ], 'result': 'Emperor'     },
-    {'source': ['Fortune',    'Fool',       ], 'result': 'Judge'       },
+    {'source': ['Fortune',    'Fool',       ], 'result': 'Judgement'   },
     {'source': ['Fortune',    'Magician',   ], 'result': 'Strength'    },
     {'source': ['Fortune',    'Priestess',  ], 'result': 'Strength'    },
     {'source': ['Fortune',    'Empress',    ], 'result': 'Strength'    },
@@ -475,7 +475,7 @@ var arcana3Combos = [
     {'source': ['Fortune',    'Lovers',     ], 'result': 'Hanged Man'  },
     {'source': ['Fortune',    'Chariot',    ], 'result': 'Temperance'  },
     {'source': ['Fortune',    'Justice',    ], 'result': 'Priestess'   },
-    {'source': ['Fortune',    'Hermit',     ], 'result': 'Judge'       },
+    {'source': ['Fortune',    'Hermit',     ], 'result': 'Judgement'   },
     {'source': ['Strength',   'Fool',       ], 'result': 'Empress'     },
     {'source': ['Strength',   'Magician',   ], 'result': 'Tower'       },
     {'source': ['Strength',   'Priestess',  ], 'result': 'Empress'     },
@@ -544,10 +544,10 @@ var arcana3Combos = [
     {'source': ['Tower',      'Fool',       ], 'result': 'Fortune'     },
     {'source': ['Tower',      'Magician',   ], 'result': 'Emperor'     },
     {'source': ['Tower',      'Priestess',  ], 'result': 'Moon'        },
-    {'source': ['Tower',      'Empress',    ], 'result': 'Judge'       },
+    {'source': ['Tower',      'Empress',    ], 'result': 'Judgement'   },
     {'source': ['Tower',      'Emperor',    ], 'result': 'Chariot'     },
     {'source': ['Tower',      'Heirophant', ], 'result': 'Emperor'     },
-    {'source': ['Tower',      'Lovers',     ], 'result': 'Judge'       },
+    {'source': ['Tower',      'Lovers',     ], 'result': 'Judgement'   },
     {'source': ['Tower',      'Chariot',    ], 'result': 'Heirophant'  },
     {'source': ['Tower',      'Justice',    ], 'result': 'Chariot'     },
     {'source': ['Tower',      'Hermit',     ], 'result': 'Empress'     },
@@ -555,7 +555,7 @@ var arcana3Combos = [
     {'source': ['Tower',      'Strength',   ], 'result': 'Devil'       },
     {'source': ['Tower',      'Hanged Man', ], 'result': 'Fortune'     },
     {'source': ['Tower',      'Death',      ], 'result': 'Justice'     },
-    {'source': ['Tower',      'Temperance', ], 'result': 'Judge'       },
+    {'source': ['Tower',      'Temperance', ], 'result': 'Judgement'   },
     {'source': ['Tower',      'Devil',      ], 'result': 'Star'        },
     {'source': ['Star',       'Fool',       ], 'result': 'Hermit'      },
     {'source': ['Star',       'Magician',   ], 'result': 'Heirophant'  },
@@ -600,7 +600,7 @@ var arcana3Combos = [
     {'source': ['Sun',        'Heirophant', ], 'result': 'Magician'    },
     {'source': ['Sun',        'Lovers',     ], 'result': 'Justice'     },
     {'source': ['Sun',        'Chariot',    ], 'result': 'Priestess'   },
-    {'source': ['Sun',        'Justice',    ], 'result': 'Judge'       },
+    {'source': ['Sun',        'Justice',    ], 'result': 'Judgement'   },
     {'source': ['Sun',        'Hermit',     ], 'result': 'Tower'       },
     {'source': ['Sun',        'Fortune',    ], 'result': 'Chariot'     },
     {'source': ['Sun',        'Strength',   ], 'result': 'Tower'       },
@@ -656,7 +656,7 @@ var specialCombos = [
     {'result': 'Lucifer', 'sources': ['Ananta', 'Anubis', 'Trumpeter', 'Michael', 'Satan', 'Metatron']},
     {'result': 'Izanagi-no-Okami', 'sources': ['Izanagi', 'Sandman', 'Nata Taishi', 'Girimehkala', 'Norn', 'Oukuninushi', 'Orthrus', 'Kartikeya', 'Mithra', 'Tzitzimitl', 'Cu Chulainn', 'Legion']},
     ];
-    
+
 module.exports.personae = personae;
 module.exports.arcana2Combos = arcana2Combos;
 module.exports.arcana3Combos =  arcana3Combos;

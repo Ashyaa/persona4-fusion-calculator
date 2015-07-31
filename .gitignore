@@ -1,0 +1,8 @@
+# Dependency directories
+node_modules
+bower_components
+devDependencies
+
+# Build files
+build
+build.zip

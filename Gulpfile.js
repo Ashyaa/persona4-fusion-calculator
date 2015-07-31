@@ -2,7 +2,6 @@
 var gulp = require('gulp');
 
 // Include plugins
-
 var jshint = require('gulp-jshint');
 var browserify = require('gulp-browserify');
 var sass = require('gulp-sass');
@@ -25,7 +24,7 @@ server.use(livereload({port: livereloadport}));
 server.use(express.static('./build'));
 // Because I like HTML5 pushstate... this redirects everything back to our index.html
 server.all('/*', function(req, res) {
-    res.sendfile('index.html', { root: 'build' });
+    res.sendFile('index.html', { root: 'build' });
 });
 
 // JSHint task
@@ -127,6 +126,8 @@ gulp.task('dev', function() {
   // Run the watch task, to keep taps on changes
   gulp.run('assets');
   gulp.run('browserify');
+  gulp.run('views');
+  gulp.run('sass');
   gulp.run('watch');
 });
 

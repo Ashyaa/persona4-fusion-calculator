@@ -4,6 +4,7 @@
   "description": "A little web app to know how to fuse which Persona you want in Persona 4",
   "author": "Maxime Mongodin <mongodinma@eisti.eu>",
   "devDependencies": {
+    "angular": "^1.4.3",
     "browserify": "^10.1.0",
     "connect-livereload": "^0.5.3",
     "express": "^4.12.3",

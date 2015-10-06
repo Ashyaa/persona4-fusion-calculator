@@ -3,7 +3,7 @@
 
 module.exports = function service() {
 
-    var data = require('../data/Data');
+    var data = require('../data/DataP4');
 
     this.getPersonaByName = function (name){
       for(var i= 0; i < data.personae.length; i++)
@@ -230,9 +230,6 @@ module.exports = function service() {
 
       for(var i =0; i < personaeArcana1.length; i++){
 
-    //    if(personaeArcana1[i].name == 'Angel'){
-    //      alert("Persona : " + personaeArcana1[i].name);
-
           recipesSubFusion = this.getArcanasIngredientsSimpleFusion(arcana2);
 
           this.retrieveParents($scope, wantedPersonaArcana, recipesSubFusion, personaeArcana1[i]);
@@ -241,9 +238,6 @@ module.exports = function service() {
 
 
       for(var j =0; j < personaeArcana2.length; j++){
-
-    //    if(personaeArcana2[j].name == 'Angel'){
-    //      alert("Persona : " + personaeArcana2[j].name);
 
           recipesSubFusion = this.getArcanasIngredientsSimpleFusion(arcana1);
 

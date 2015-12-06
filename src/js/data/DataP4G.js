@@ -482,7 +482,9 @@ var arcana2Combos = [
     ];
 
 var arcana3Combos = [
+    {'source': ['Fool',       'Fool',       ], 'result': 'Fool'        },
     {'source': ['Magician',   'Fool',       ], 'result': 'Fortune'     },
+    {'source': ['Magician',   'Magician',   ], 'result': 'Magician'    },
     {'source': ['Priestess',  'Fool',       ], 'result': 'Lovers'      },
     {'source': ['Priestess',  'Magician',   ], 'result': 'Fortune'     },
     {'source': ['Empress',    'Fool',       ], 'result': 'Judgement'   },

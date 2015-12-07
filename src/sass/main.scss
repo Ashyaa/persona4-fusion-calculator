@@ -1,19 +1,18 @@
 $font-stack: Optima;
 $primary-color: #333;
 
-$background-image-url: url("../assets/images/background.png");
+$logo-url: url("../assets/images/p4.png");
 
 body {
   text-align: center;
-  font: 100% $font-stack;
   color: $primary-color;
-//  background-color: yellow;
-  background: $background-image-url;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size:100% auto;
-  background-attachment: fixed;
+  background-color: yellow;
+  // background: $background-image-url;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size:100% auto;
+    // background-attachment: fixed;
 
 }
 
@@ -74,6 +73,11 @@ h1 {
     }
 }
   
+thead{
+  td{
+    min-width: 100px;
+  }
+}
 
 table.recipes {
   margin-top: 10px;
@@ -92,4 +96,30 @@ table.recipes {
 .pagination{
   cursor: pointer;
   cursor: hand;
+}
+
+.homeDisplay{
+  position: absolute;
+  white-space: nowrap;
+  left: 35%;
+  top: 30%;
+  
+  li {
+    list-style: none;
+    display: inline;
+  }
+}
+
+.gameChoice{
+  float: left;
+  cursor: pointer;
+  cursor: hand;
+  width: 225px;
+  height: auto;
+}
+
+#logo{
+  position: absolute;
+  width: 225px;
+  height: auto;
 }

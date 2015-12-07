@@ -3,22 +3,35 @@
 
 	<head>
 		<title>Persona 4 Fusion Calculator</title>
-		<link rel="stylesheet" type="text/css" href="css/main.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">		
 		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 
 	<body>
-
-		<h1><a ng-href="/#/">Persona 4 Fusion Calculator</a></h1>
-
-
+		
+		<div ng-if="gameChosen">
+	
+			<img id="logo" class="img-responsive" ng-src="assets/images/p4.png">
+	
+			<h1><a ng-href="/#/">Persona 4 Fusion Calculator</a></h1>
+	
 			<div class="container">
-
+	
 				<div ng-view></div>
-
+	
 			</div>
 
+		</div>
+		
+		<div ng-show="!gameChosen">
+			
+			<ul class="homeDisplay">
+				<h1><a ng-href="/#/">Choose your game:</a></h1>
+				<li><img class="img-responsive gameChoice" ng-src="assets/images/p4.png" ng-click="gameChosen = 'p4'"></li>
+				<li><img class="img-responsive gameChoice" ng-src="assets/images/p4g.png" ng-click="gameChosen = 'p4g'"></li>
+			</ul>
+		</div>
 
 		<script src="js/bundle.js"></script>
 

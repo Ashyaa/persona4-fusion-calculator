@@ -783,3 +783,8 @@ var specialCombos = [
     {'result': 'Yatsufusa', 'sources': ['Makami', 'Orthrus', 'Mothman', 'Thoth', 'Narasimha']},
     {'result': 'Yoshitsune', 'sources': ['Masakado', 'Shiki-Ouji', 'Oukuninushi', 'Hachiman', 'Hitokoto-Nushi']},
 ];
+
+module.exports.personae = personae;
+module.exports.arcana2Combos = arcana2Combos;
+module.exports.arcana3Combos =  arcana3Combos;
+module.exports.specialCombos = specialCombos;

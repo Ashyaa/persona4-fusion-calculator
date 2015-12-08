@@ -98,22 +98,15 @@ table.recipes {
   cursor: hand;
 }
 
-.homeDisplay{
-  position: absolute;
-  white-space: nowrap;
-  left: 35%;
-  top: 30%;
-  
-  li {
-    list-style: none;
-    display: inline;
-  }
+.choiceMenu{
+    margin-top: 10%;
 }
 
-.gameChoice{
-  float: left;
+.gameImg{
+  display: inline;
   cursor: pointer;
   cursor: hand;
+  margin: 25px;
   width: 225px;
   height: auto;
 }

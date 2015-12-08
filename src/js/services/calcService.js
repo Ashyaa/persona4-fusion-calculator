@@ -3,9 +3,27 @@
 
 module.exports = function service() {
 
-    var data = require('../data/DataP4');
+    // var data = require('../data/DataP4');
+    var data;
+       
+    this.initialize = function ($scope){
+      switch ($scope.gameChosen){
+        case 'p4': 
+          data = require('../data/DataP4');
+          break;
+        case 'p4g': 
+          data = require('../data/DataP4G');
+          break;
+        // case 'p5': 
+        //   data = require('../data/DataP5');
+        //   break;
+        default:
+            
+      }
+    };
 
-    this.getPersonaByName = function (name){
+    this.getPersonaByName = function ($scope, name){
+      
       for(var i= 0; i < data.personae.length; i++)
       {
            if(data.personae[i].name == name)
@@ -250,7 +268,7 @@ module.exports = function service() {
     this.resultsSimpleFusion = function ($scope, wantedPersonaArcana) {
 
       var recipes = this.getArcanasIngredientsSimpleFusion($scope.wantedPersona.arcana);
-
+      
       for(var i= 0; i < recipes.length; i++)
         {
           var arcana1 = recipes[i].source[0];

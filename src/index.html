@@ -2,7 +2,7 @@
 <html ng-app="myApp">
 
 	<head>
-		<title>Persona 4 Fusion Calculator</title>
+		<title>Persona Fusion Calculator</title>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">		
 		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -10,11 +10,14 @@
 
 	<body>
 		
-		<div ng-if="gameChosen">
+		<div ng-show="gameChosen">
 	
-			<img id="logo" class="img-responsive" ng-src="assets/images/p4.png">
-	
-			<h1><a ng-href="/#/">Persona 4 Fusion Calculator</a></h1>
+			<img id="logo" class="img-responsive" ng-src="assets/images/{{gameChosen}}.png">
+			<h1>
+				<a ng-if="gameChosen == 'p4'" ng-href="/#/">Persona 4 Fusion Calculator</a>
+				<a ng-if="gameChosen == 'p4g'" ng-href="/#/">Persona 4 Golden Fusion Calculator</a>
+				<!--<a ng-if="gameChosen == 'p5'" ng-href="/#/">Persona 4 Fusion Calculator</a>-->
+			</h1>
 	
 			<div class="container">
 	
@@ -24,13 +27,14 @@
 
 		</div>
 		
-		<div ng-show="!gameChosen">
+		<div ng-hide="gameChosen">
 			
-			<ul class="homeDisplay">
+			<div class="choiceMenu">
 				<h1><a ng-href="/#/">Choose your game:</a></h1>
-				<li><img class="img-responsive gameChoice" ng-src="assets/images/p4.png" ng-click="gameChosen = 'p4'"></li>
-				<li><img class="img-responsive gameChoice" ng-src="assets/images/p4g.png" ng-click="gameChosen = 'p4g'"></li>
-			</ul>
+				<img class="img-responsive gameImg" ng-src="assets/images/p4.png" align="middle" ng-click="gameChosen = 'p4'">
+				<img class="img-responsive gameImg" ng-src="assets/images/p4g.png" align="middle" ng-click="gameChosen = 'p4g'">
+				<!--<img class="img-responsive gameImg" ng-src="assets/images/p5.png" align="middle" ng-click="gameChosen = 'p5'">-->
+			</div>
 		</div>
 
 		<script src="js/bundle.js"></script>

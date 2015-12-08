@@ -1,8 +1,11 @@
 'use strict';
 
 var calcCtrl = function($scope, $routeParams, calcService) {
+  
+   calcService.initialize($scope);
 
-   $scope.wantedPersona = calcService.getPersonaByName($routeParams.persona_name);
+   $scope.wantedPersona = calcService.getPersonaByName($scope, $routeParams.persona_name);
+   
    $scope.recipes = [];
 
    if($scope.wantedPersona.special){
@@ -10,9 +13,8 @@ var calcCtrl = function($scope, $routeParams, calcService) {
      calcService.getSpecialCombo($scope);
 
    }else{
-
+     
      var wantedPersonaArcana = calcService.getPersonaeByArcana($scope.wantedPersona.arcana);
-
      //Simple Fusion results added to $scope.recipes
      calcService.resultsSimpleFusion($scope, wantedPersonaArcana);
 

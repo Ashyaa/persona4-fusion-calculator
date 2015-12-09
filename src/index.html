@@ -12,12 +12,18 @@
 		
 		<div ng-show="gameChosen">
 	
-			<img id="logo" class="img-responsive" ng-src="assets/images/{{gameChosen}}.png">
-			<h1>
-				<a ng-if="gameChosen == 'p4'" ng-href="/#/">Persona 4 Fusion Calculator</a>
-				<a ng-if="gameChosen == 'p4g'" ng-href="/#/">Persona 4 Golden Fusion Calculator</a>
-				<!--<a ng-if="gameChosen == 'p5'" ng-href="/#/">Persona 4 Fusion Calculator</a>-->
-			</h1>
+			<div id="header">
+				<img id="logo" class="img-responsive" ng-src="assets/images/{{gameChosen}}.png">
+				<h1>
+					<a ng-if="gameChosen == 'p4'" ng-href="/#/">Persona 4 Fusion Calculator</a>
+					<a ng-if="gameChosen == 'p4g'" ng-href="/#/">Persona 4 Golden Fusion Calculator</a>
+					<!--<a ng-if="gameChosen == 'p5'" ng-href="/#/">Persona 4 Fusion Calculator</a>-->
+				</h1>
+				
+				<h3 id="backToSelection">
+					<a ng-click="gameChosen = ''" ng-href="/#/">Back to game selection</a>
+				</h3> 
+			</div>
 	
 			<div class="container">
 	
@@ -37,6 +43,7 @@
 			</div>
 		</div>
 
+		<script src="js/vendors.js"></script>
 		<script src="js/bundle.js"></script>
 
 	</body>

@@ -2,11 +2,17 @@
 var gulp = require('gulp');
 
 // Include plugins
-var jshint = require('gulp-jshint');
-var browserify = require('gulp-browserify');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
+// var jshint = require('gulp-jshint');
+// var browserify = require('gulp-browserify');
+// var sass = require('gulp-sass');
+// var concat = require('gulp-concat');
 
+
+// Include plugins
+var plugins = require("gulp-load-plugins")({
+	pattern: ['gulp-*', 'gulp.*', 'main-bower-files'],
+	replaceString: /\bgulp[\-.]/
+});
 
 var embedlr = require('gulp-embedlr'),
     refresh = require('gulp-livereload'),
@@ -30,18 +36,18 @@ server.all('/*', function(req, res) {
 // JSHint task
 gulp.task('lint', function() {
     gulp.src('./src/js/*.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'));
+        .pipe(plugins.jshint())
+        .pipe(plugins.jshint.reporter('default'));
 });
 
 // SASS task
 gulp.task('sass', function(){
     gulp.src('src/sass/**/*.scss')
-        .pipe(sass({onError: function(e) {console.log(e); } }))
+        .pipe(plugins.sass({onError: function(e) {console.log(e); } }))
         .pipe(gulp.dest('build/css'));
 
     gulp.src('src/sass/*.scss')
-        .pipe(sass({onError: function(e) {console.log(e); } }))
+        .pipe(plugins.sass({onError: function(e) {console.log(e); } }))
         .pipe(gulp.dest('build/css'))
         .pipe(refresh(lrserver));
 });
@@ -50,11 +56,11 @@ gulp.task('sass', function(){
 gulp.task('browserify', function() {
     // Single entry point to browserify
     gulp.src('src/js/app.js')
-        .pipe(browserify({
+        .pipe(plugins.browserify({
           insertGlobals : true,
           debug : true
         }))
-        .pipe(concat('bundle.js'))
+        .pipe(plugins.concat('bundle.js'))
         .pipe(gulp.dest('build/js'));
 });
 
@@ -68,6 +74,17 @@ gulp.task('views', function() {
    gulp.src('./src/views/**/*')
   .pipe(gulp.dest('build/views/'))
   .pipe(refresh(lrserver)); // Tell the lrserver to refresh
+});
+
+// Vendors task
+gulp.task('vendors', function() {
+
+	gulp.src(plugins.mainBowerFiles())
+		.pipe(plugins.filter('*.js'))
+		.pipe(plugins.concat('vendors.js'))
+		.pipe(plugins.uglify())
+		.pipe(gulp.dest('build/js'));
+
 });
 
 // Assets task
@@ -125,6 +142,7 @@ gulp.task('dev', function() {
   lrserver.listen(livereloadport);
   // Run the watch task, to keep taps on changes
   gulp.run('assets');
+  gulp.run('vendors');
   gulp.run('browserify');
   gulp.run('views');
   gulp.run('sass');

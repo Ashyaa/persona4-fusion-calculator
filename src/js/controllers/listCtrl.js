@@ -13,13 +13,16 @@ var listCtrl = function($scope) {
       if($scope.gameChosen == 'p4g'){
         
         $scope.personae = require('../data/DataP4G').personae;
+        $('body').css("background-color","#fee727");
         
       };
       
       // if($scope.gameChosen == 'p5'){
       //   
       //   $scope.personae = require('../data/DataP5').personae;
-      //   
+        // $('body').css("background-color","red");
+        // $('body').css("font-family", "Times New Roman");
+        // $('h1').css("text-shadow","none");
       // };
   
     });

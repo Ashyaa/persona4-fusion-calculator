@@ -11,8 +11,6 @@ var myApp = angular.module('myApp', [
 	'ngRoute',
 ]);
 
-var logoPath="";
-
 myApp.filter('startFrom', function() {
 	return function(input, start) {
     	start = +start;

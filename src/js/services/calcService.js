@@ -23,11 +23,11 @@ module.exports = function service() {
     };
 
     this.getPersonaByName = function ($scope, name){
-      
       for(var i= 0; i < data.personae.length; i++)
       {
-           if(data.personae[i].name == name)
-    	   	return data.personae[i];
+           if(data.personae[i].name == name){
+             return data.personae[i]; 
+           }
       }
     };
 
@@ -49,7 +49,7 @@ module.exports = function service() {
         if(data.specialCombos[i].result == $scope.wantedPersona.name){
           $scope.recipes[0] = {'number': $scope.recipes.length+1, 'ingredients': []};
           for(var j=0; j < data.specialCombos[i].sources.length; j++){
-            $scope.recipes[0].ingredients.push(this.getPersonaByName(data.specialCombos[i].sources[j]));
+            $scope.recipes[0].ingredients.push(this.getPersonaByName($scope, data.specialCombos[i].sources[j]));
           }
         }
       }

@@ -31,7 +31,7 @@ button.btn.btn-default {
   margin: 5px;
 }
 
-h1 {
+h1, h3 {
   /* WebKit (Safari/Chrome) Only */
   -webkit-text-stroke: 1px white;
   
@@ -111,8 +111,18 @@ table.recipes {
   height: auto;
 }
 
+#header{
+  position: relative;
+}
+
 #logo{
   position: absolute;
   width: 225px;
   height: auto;
+}
+
+#backToSelection{
+  position: absolute;
+  top: 0px;
+  right: 1%;
 }

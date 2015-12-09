@@ -68,7 +68,7 @@
 			<td>
 				<table class="container">
 					<td ng-repeat="persona in recipe.ingredients | orderBy: '-level'" class="col-xs-1">
-						<a ng-href="#/persona/{{persona.name}}">{{persona.name}}</a> ({{persona.level}} / {{persona.arcana}})
+						<a ng-href="#/persona/{{persona.name}}" ng-click="goTop()">{{persona.name}}</a> ({{persona.level}} / {{persona.arcana}})
 					</td>
 				</table>
 			</td>			

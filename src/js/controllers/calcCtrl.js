@@ -1,6 +1,6 @@
 'use strict';
 
-var calcCtrl = function($scope, $routeParams, calcService) {
+var calcCtrl = function($scope, $routeParams, calcService, $location, $anchorScroll) {
   
    calcService.initialize($scope);
 
@@ -23,6 +23,13 @@ var calcCtrl = function($scope, $routeParams, calcService) {
 
      $scope.Math = window.Math;
    }
+   
+   $scope.goTop = function() {
+
+      $location.hash('header');
+
+      $anchorScroll();
+    };
 };
 
 module.exports = calcCtrl;

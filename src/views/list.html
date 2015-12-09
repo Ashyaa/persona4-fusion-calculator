@@ -22,7 +22,7 @@
 	<tbody>
 		<tr ng-repeat="persona in personae | filter: search | orderBy: order">
 			<td>{{persona.level}}</td>
-			<td><a ng-href="#/persona/{{persona.name}}">{{persona.name}}</a></td>
+			<td><a ng-href="#/persona/{{persona.name}}" ng-click="goTop()">{{persona.name}}</a></td>
 			<td>{{persona.arcana}}</td>
 		</tr>	
 	</tbody>

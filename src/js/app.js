@@ -7,8 +7,10 @@ var calcCtrl = require('./controllers/calcCtrl');
 var listCtrl = require('./controllers/listCtrl');
 var calcService = require('./services/calcService');
 
+var ngRoute = require('angular-route'); 
+
 var myApp = angular.module('myApp', [
-	'ngRoute',
+	ngRoute,
 ]);
 
 myApp.filter('startFrom', function() {

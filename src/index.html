@@ -13,7 +13,9 @@
 		<div ng-show="gameChosen">
 	
 			<div id="header">
-				<img id="logo" class="img-responsive" ng-src="assets/images/{{gameChosen}}.png">
+				<div ng-if="gameChosen != ''">
+					<img id="logo" class="img-responsive" ng-src="assets/images/{{gameChosen}}.png">
+				</div>
 				<h1>
 					<a ng-if="gameChosen == 'p4'" ng-href="/#/">Persona 4 Fusion Calculator</a>
 					<a ng-if="gameChosen == 'p4g'" ng-href="/#/">Persona 4 Golden Fusion Calculator</a>

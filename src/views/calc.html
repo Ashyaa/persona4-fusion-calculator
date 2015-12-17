@@ -59,15 +59,9 @@
 			<td>tbd
 <!--			{{recipe.cost}} 	-->
 			</td>		
-<!-- Create a subtable in this td, in which we use ngRepeat on the columns-->			
-<!--
-			<td ng-repeat="persona in recipe.ingredients | orderBy: '-level'">
-				<a ng-href="#/persona/{{persona.name}}">{{persona.name}}</a> ({{persona.level}} / {{persona.arcana}})
-			</td>
--->
 			<td>
 				<table class="container">
-					<td ng-repeat="persona in recipe.ingredients | orderBy: '-level'" class="col-xs-1">
+					<td ng-repeat="persona in recipe.ingredients | orderBy:'-level'" class="col-xs-1">
 						<a ng-href="#/persona/{{persona.name}}" ng-click="goTop()">{{persona.name}}</a> ({{persona.level}} / {{persona.arcana}})
 					</td>
 				</table>

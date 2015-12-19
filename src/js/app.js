@@ -5,6 +5,7 @@ require('angular-router-browserify')(angular);
 
 var calcCtrl = require('./controllers/calcCtrl');
 var listCtrl = require('./controllers/listCtrl');
+var indexCtrl = require('./controllers/indexCtrl');
 var calcService = require('./services/calcService');
 
 var ngRoute = require('angular-route'); 
@@ -12,6 +13,8 @@ var ngRoute = require('angular-route');
 var myApp = angular.module('myApp', [
 	ngRoute,
 ]);
+
+myApp.controller('indexController',['$scope', indexCtrl]);
 
 myApp.filter('startFrom', function() {
 	return function(input, start) {

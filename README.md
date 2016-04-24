@@ -13,6 +13,10 @@ I know there is no price yet, I don't know how to compute it precisely. It also 
 
 I will update this for the upcoming Persona 5, I just need to create new data.
 
+Here is a live version of this application:
+    
+    http://heimdall409.github.io
+
 ---
 
 ### Getting up and running

@@ -14,23 +14,40 @@ var indexCtrl = function($scope) {
       switch ($scope.gameChosen){
         case '':
           $('body').css("background-color","yellow");
+          $('h1').addClass('p4text');
+          $('h3').addClass('p4text');
+          $('h1').removeClass('p5text');
+          $('h3').removeClass('p5text');
+          $('body').removeClass('p5text');
           break;        
         case 'p4': 
           $scope.personae = require('../data/DataP4').personae;
           $('body').css("background-color","yellow");
+          $('h1').addClass('p4text');
+          $('h3').addClass('p4text');
+          $('h1').removeClass('p5text');
+          $('h3').removeClass('p5text');
+          $('body').removeClass('p5text');
           break;
         case 'p4g': 
           $scope.personae = require('../data/DataP4G').personae;
           $('body').css("background-color","#fee727");
+          $('h1').addClass('p4text');
+          $('h3').addClass('p4text');
+          $('h1').removeClass('p5text');
+          $('h3').removeClass('p5text');
+          $('body').removeClass('p5text');
           break;
-        // case 'p5': 
-        //   $scope.personae = require('../data/DataP5').personae;
-        //   $('body').css("background-color","red");
-        //   $('body').css("font-family", "Times New Roman");
-        //   $('h1').css("text-shadow","none");
-        //   break;
+        case 'p5': 
+          $scope.personae = require('../data/DataP5').personae;
+          $('body').css("background-color","red");
+          $('h1').removeClass('p4text');
+          $('h3').removeClass('p4text');
+          $('h1').addClass('p5text');
+          $('h3').addClass('p5text');
+          $('body').addClass('p5text');
+          break;
         default:
-            
       }  
     });
 

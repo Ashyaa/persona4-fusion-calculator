@@ -1,6 +1,3 @@
-// Write here all data for Persona 4 Golden fusion computation: list of personae,
-// list of simple fusion results and list of triangle fusion results
-
 'use strict';
 
 var personae = [

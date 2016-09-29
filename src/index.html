@@ -19,7 +19,7 @@
 				<h1>
 					<a ng-if="gameChosen == 'p4'" ng-href="/#/">Persona 4 Fusion Calculator</a>
 					<a ng-if="gameChosen == 'p4g'" ng-href="/#/">Persona 4 Golden Fusion Calculator</a>
-					<!--<a ng-if="gameChosen == 'p5'" ng-href="/#/">Persona 4 Fusion Calculator</a>-->
+					<a ng-if="gameChosen == 'p5'" ng-href="/#/">Persona 5 Fusion Calculator</a>
 				</h1>
 				
 				<h3 id="backToSelection">
@@ -38,10 +38,10 @@
 		<div ng-hide="gameChosen">
 			
 			<div class="choiceMenu">
-				<h1>Choose your test game:</h1>
+				<h1>Choose your game:</h1>
 				<a ng-href="/#/"><img class="img-responsive gameImg" ng-src="assets/images/p4.png" align="middle" ng-click="chooseGame('p4')"></a>
 				<a ng-href="/#/"><img class="img-responsive gameImg" ng-src="assets/images/p4g.png" align="middle" ng-click="chooseGame('p4g')"></a>
-				<!--<a ng-href="/#/"><img class="img-responsive gameImg" ng-src="assets/images/p5.png" align="middle" ng-click="chooseGame('p5')"></a>-->
+				<a ng-href="/#/"><img class="img-responsive gameImg" ng-src="assets/images/p5.png" align="middle" ng-click="chooseGame('p5')"></a>
 			</div>
 		</div>
 

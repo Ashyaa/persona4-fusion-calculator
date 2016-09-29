@@ -14,9 +14,9 @@ module.exports = function service() {
         case 'p4g': 
           data = require('../data/DataP4G');
           break;
-        // case 'p5': 
-        //   data = require('../data/DataP5');
-        //   break;
+        case 'p5': 
+          data = require('../data/DataP5');
+          break;
         default:
             
       }

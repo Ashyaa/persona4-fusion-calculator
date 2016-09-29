@@ -20,15 +20,17 @@ Here is a live version of this application:
 
 ---
 
-I will update this for the upcoming Persona 5, I just need to create new data.
+So now that Persona 5 is out, I gathered enough data for a beta version. 
+It seems that only normal fusion is relevant now, since triangle fusion seems to only use preset recipes.
 
-I am planning on playing the japonese version as soon as possible to get it done, but I might be slow gathering all the data I need.
+I got all the recipes and a list of all the Personae that you can fuse in the game (I think), but I still lack some infos:
 
-So any input is accepted! Be it a persona list for an arcana, a persona description (Name, rank and arcana) or a recipe (Magician + Priestess = X for instance) or a triangle fusion recipe. Anything will help the process go faster!
+* The rank of certain personae is missing (for instance Attis), thus I have to remove these personae from the data.
+* I don't have any info on which fusion you have to unlock, it may only be the last of each arcana but I have no serious source on that. I also don't know which low-level personae have only a set recipe to fuse them. 
+* The recipes for these special fusions: how to actually craft Shiva, Satan etc. For now, the classic algorithm is used for them and the results are of course wrong.
+* I don't know to what extend Satanael is relavant in this calculator since I do not have finished the game yet and I try to avoid getting spoiled.
 
-## WARNING: All of this is based on the supposition that the fusing system will be similar as the ones in P3 and P4!
-
-It shouldn't be different, but if it was, getting a Persona 5 version will take much more time!
+cIf you have any info on these, do contact me on my twitter (@heimdall409), and I'll update the tool as quickly as possible!
 
 ---
 

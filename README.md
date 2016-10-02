@@ -25,12 +25,11 @@ It seems that only normal fusion is relevant now, since triangle fusion seems to
 
 I got all the recipes and a list of all the Personae that you can fuse in the game (I think), but I still lack some infos:
 
-* The rank of certain personae is missing (for instance Attis), thus I have to remove these personae from the data.
-* I don't have any info on which fusion you have to unlock, it may only be the last of each arcana but I have no serious source on that. I also don't know which low-level personae have only a set recipe to fuse them. 
+* The rank of certain personae (Attis, Ardha) is missing, thus I have to remove these personae from the data. 
 * The recipes for these special fusions: how to actually craft Shiva, Satan etc. For now, the classic algorithm is used for them and the results are of course wrong.
-* I don't know to what extend Satanael is relavant in this calculator since I do not have finished the game yet and I try to avoid getting spoiled.
+* I don't know to what extend Satanael is relevant in this calculator since I do not have finished the game yet and I try to avoid getting spoiled.
 
-cIf you have any info on these, do contact me on my twitter (@heimdall409), and I'll update the tool as quickly as possible!
+If you have any info on these, do contact me on my twitter (@heimdall409), and I'll update the tool as quickly as possible!
 
 ---
 
@@ -44,7 +43,7 @@ cIf you have any info on these, do contact me on my twitter (@heimdall409), and 
 2. Run `npm install` from the root directory (you may need to sudo it)
 2. Run `bower install` from the root directory
 3. Run `gulp dev`
-4. Dev server url `http://localhost:5000`
+4. Dev server url is `http://localhost:5000`
 
 ---
 

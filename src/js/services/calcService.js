@@ -43,6 +43,11 @@ module.exports = function service() {
       return personae;
     };
 
+    this.setNoRecipe = function ($scope){
+      $scope.recipes[0] = {'number': 1, 'ingredients': []};
+      $scope.recipes[0].ingredients.push({'name': ''});
+    }
+
     this.getSpecialCombo = function($scope){
 
       for(var i=0; i < data.specialCombos.length; i++){

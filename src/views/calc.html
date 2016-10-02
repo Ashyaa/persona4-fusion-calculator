@@ -13,7 +13,9 @@
 <div class="header">	
 	{{(recipes|filter:search).length}} Recipes - {{wantedPersona.name}} ({{wantedPersona.level}} / {{wantedPersona.arcana}})
 	<span class="glyphicon glyphicon-exclamation-sign alert-danger" ng-show="wantedPersona.max" aria-hidden="true"></span>
-	<span class="alert-danger" ng-show="wantedPersona.max">Social link must be maxed!</span>		
+	<span class="alert-danger" ng-show="wantedPersona.max">Social link must be maxed!</span>
+	<span class="glyphicon glyphicon-exclamation-sign alert-info" ng-show="wantedPersona.dlc" aria-hidden="true"></span>
+	<span class="alert-info" ng-show="wantedPersona.dlc">Part of a purchasable DLC!</span>		
 </div>
 
 <div ng-show="pagesNumber >= 1" class="ng-show header" ng-init="pageNum = 0">	
@@ -66,7 +68,9 @@
 			<td>
 				<table class="container">
 					<td ng-repeat="persona in recipe.ingredients | orderBy:'-level'" class="col-xs-1">
-						<a ng-href="#/persona/{{persona.name}}" ng-click="goTop()">{{persona.name}}</a> ({{persona.level}} / {{persona.arcana}})
+						<a ng-href="#/persona/{{persona.name}}" ng-click="goTop()">{{persona.name}}</a>
+						<span ng-hide="wantedPersona.rare">({{persona.level}} / {{persona.arcana}})</span>
+						<span ng-show="wantedPersona.rare">Can't be fused!</span>
 					</td>
 				</table>
 			</td>			

@@ -12,10 +12,12 @@
 
 <div class="header">	
 	{{(recipes|filter:search).length}} Recipes - {{wantedPersona.name}} ({{wantedPersona.level}} / {{wantedPersona.arcana}})
-	<span class="glyphicon glyphicon-exclamation-sign alert-danger" ng-show="wantedPersona.max" aria-hidden="true"></span>
-	<span class="alert-danger" ng-show="wantedPersona.max">Social link must be maxed!</span>
-	<span class="glyphicon glyphicon-exclamation-sign alert-info" ng-show="wantedPersona.dlc" aria-hidden="true"></span>
-	<span class="alert-info" ng-show="wantedPersona.dlc">Part of a purchasable DLC!</span>		
+	<span class="glyphicon glyphicon-exclamation-sign alert-info" ng-show="wantedPersona.max" aria-hidden="true"></span>
+	<span class="alert-info" ng-show="wantedPersona.max">Social link must be maxed!</span>
+	<span class="glyphicon glyphicon-exclamation-sign alert-success" ng-show="wantedPersona.dlc" aria-hidden="true"></span>
+	<span class="alert-success" ng-show="wantedPersona.dlc">Part of a purchasable DLC!</span>
+	<span class="glyphicon glyphicon-exclamation-sign alert-warning" ng-show="wantedPersona.rare" aria-hidden="true"></span>
+	<span class="alert-warning" ng-show="wantedPersona.rare">This persona can not be fused!</span>		
 </div>
 
 <div ng-show="pagesNumber >= 1" class="ng-show header" ng-init="pageNum = 0">	

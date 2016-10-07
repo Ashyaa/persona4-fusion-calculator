@@ -14,7 +14,11 @@ var calcCtrl = function($scope, $routeParams, calcService, $location, $anchorScr
    
    $scope.recipes = [];
 
-   if($scope.wantedPersona.special){
+   if($scope.wantedPersona.rare){
+
+     calcService.setNoRecipe($scope);
+
+   }else if($scope.wantedPersona.special){
 
      calcService.getSpecialCombo($scope);
 

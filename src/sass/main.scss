@@ -20,8 +20,16 @@ body {
   text-align: center;
 }
 
-span.alert-danger, span.alert-info{
+span.alert-danger, span.alert-info, span.alert-success, span.alert-warning{
   background-color: transparent;
+}
+
+span.alert-danger {
+  color: #AA0099;
+}
+
+span.alert-warning {
+  color: #DDDD00;
 }
 
 button.btn.btn-default {

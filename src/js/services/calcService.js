@@ -168,7 +168,7 @@ module.exports = function service() {
 
             averageLevel = (personae1[i].level + personae2[j].level) / 2;
 
-            if(averageLevel < $scope.wantedPersona.level){
+            if(averageLevel <= $scope.wantedPersona.level){
               closestPersona = this.closestPersonaUp(wantedPersonaArcana, averageLevel);
 
               if (closestPersona.name == $scope.wantedPersona.name)

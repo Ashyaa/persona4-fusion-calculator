@@ -44,7 +44,7 @@ module.exports = function service() {
     };
 
     this.setNoRecipe = function ($scope){
-      $scope.recipes[0] = {'number': 1, 'ingredients': []};
+      $scope.recipes[0] = {'ingredients': []};
       $scope.recipes[0].ingredients.push({'name': ''});
     }
 
@@ -52,7 +52,7 @@ module.exports = function service() {
 
       for(var i=0; i < data.specialCombos.length; i++){
         if(data.specialCombos[i].result == $scope.wantedPersona.name){
-          $scope.recipes[0] = {'number': $scope.recipes.length+1, 'ingredients': []};
+          $scope.recipes[0] = {'ingredients': []};
           for(var j=0; j < data.specialCombos[i].sources.length; j++){
             $scope.recipes[0].ingredients.push(this.getPersonaByName($scope, data.specialCombos[i].sources[j]));
           }
@@ -131,7 +131,7 @@ module.exports = function service() {
       for(var i= 0; i < arcana.length; i++){
         difference = average - arcana[i].level;
 
-        if(difference >= 0 && arcana[i].name != persona1 && arcana[i].name != persona2){
+        if(difference >= 0 && arcana[i].name != persona1 && arcana[i].name != persona2 && !arcana[i].special){
           candidates.push({'index': i, 'difference': difference});
     //      nobody = false;
         }
@@ -166,13 +166,13 @@ module.exports = function service() {
         for(var j= 0; j < personae2.length; j++){
           if(!this.checkDuplicatesSimpleFusion(personae1[i].name, personae2[j].name, $scope.recipes)){
 
-            averageLevel = (personae1[i].level + personae2[j].level) / 2;
+            averageLevel = ((personae1[i].level + personae2[j].level) / 2) + 1;
 
-            if(averageLevel <= $scope.wantedPersona.level){
+            if(averageLevel < $scope.wantedPersona.level){
               closestPersona = this.closestPersonaUp(wantedPersonaArcana, averageLevel);
 
               if (closestPersona.name == $scope.wantedPersona.name)
-                $scope.recipes.push({'number': $scope.recipes.length+1, 'ingredients': [personae1[i], personae2[j]] });
+                $scope.recipes.push({'ingredients': [personae1[i], personae2[j]] });
             }
           }
         }
@@ -196,7 +196,7 @@ module.exports = function service() {
 
 
                     if (closestPersona.name == $scope.wantedPersona.name)
-                      $scope.recipes.push({'number': $scope.recipes.length+1, 'ingredients': [personae1[i], personae2[j]] });
+                      $scope.recipes.push({'ingredients': [personae1[i], personae2[j]] });
                   }
               }
             }
@@ -234,7 +234,7 @@ module.exports = function service() {
                 closestPersona = this.closestPersonaUp(wantedPersonaArcana, averageLevel);
 
                 if(closestPersona.name == $scope.wantedPersona.name){
-                  $scope.recipes.push({'number': $scope.recipes.length+1, 'ingredients': [highestLevelPersona, personaeArcana1[i], personaeArcana2[j]]});
+                  $scope.recipes.push({'ingredients': [highestLevelPersona, personaeArcana1[i], personaeArcana2[j]]});
                 }
               }
             }
@@ -288,6 +288,20 @@ module.exports = function service() {
             this.simpleFusion($scope, personaeArcana1, personaeArcana2, wantedPersonaArcana);
           }
         }
+      
+      if($scope.gameChosen == 'p5'){
+        if($scope.wantedPersona.name == 'Moloch'){
+          $scope.recipes.splice(55,1);
+        }
+
+        if($scope.wantedPersona.name == 'Attis'){
+          $scope.recipes.splice(39,1);
+        }
+
+        if($scope.wantedPersona.name == 'Baphomet'){
+          $scope.recipes.splice(290,1);
+        }
+      } 
     };
 
     this.resultsTriangleFusion = function ($scope, wantedPersonaArcana){

@@ -4,10 +4,10 @@
 
 <div class="header">
 	<label>Filter : 
-		<input class="" ng-model="search" type="text" name="search" size="30"></input>
+		<input class="" ng-model="search" type="text" name="search" size="30" ng-change="pageNum = 0"></input>
 	</label>
 			
-	<button class="btn btn-default" ng-click="search = ''">Clear</button>	
+	<button class="btn btn-default" ng-click="search = ''; pageNum = 0">Clear</button>	
 </div>
 
 <div class="header">	
@@ -62,7 +62,7 @@
 		<tr ng-repeat="recipe in recipes | filter: search | orderBy: ingredients.length | startFrom: pageNum*100 |
 					   limitTo: 100">
 			<td>
-				{{recipe.number}} 	
+				{{ pageNum * 100 + ($index + 1)}} 	
 			</td>
 			<td>tbd
 <!--			{{recipe.cost}} 	-->

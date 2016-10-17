@@ -3,7 +3,6 @@
 
 module.exports = function service() {
 
-    // var data = require('../data/DataP4');
     var data;
        
     this.initialize = function ($scope){
@@ -60,6 +59,17 @@ module.exports = function service() {
       }
     };
 
+    this.getRareCombosByArcana = function (arcana) {
+      var rareCombos = [];
+      var index = 0;
+
+      while(data.rareCombos[index].arcana != arcana){
+        index ++;
+      }
+
+      return data.rareCombos[index].comboList;
+    };
+
     this.getArcanasIngredientsSimpleFusion = function (arcana) {
       var arcanaRecipes = [];
 
@@ -107,7 +117,7 @@ module.exports = function service() {
       for(var i= 0; i < arcana.length; i++){
         difference = arcana[i].level - average;
 
-        if(difference >= 0){
+        if(difference >= 0 && !arcana[i].special && !arcana[i].rare){
           candidates.push({'index': i, 'difference': difference});
      //     nobody = false;
         }
@@ -122,7 +132,7 @@ module.exports = function service() {
 
     };
 
-    this.closestPersonaDown = function (arcana, average, persona1, persona2){
+    this.closestPersonaDown = function (arcana, average){
       var candidates = [];
       var difference = 0;
     //  var nobody = true;
@@ -131,7 +141,7 @@ module.exports = function service() {
       for(var i= 0; i < arcana.length; i++){
         difference = average - arcana[i].level;
 
-        if(difference >= 0 && arcana[i].name != persona1 && arcana[i].name != persona2 && !arcana[i].special){
+        if(difference >= 0 && !arcana[i].special && !arcana[i].rare){
           candidates.push({'index': i, 'difference': difference});
     //      nobody = false;
         }
@@ -158,21 +168,64 @@ module.exports = function service() {
       return false;
     };
 
+    this.indexInArcana = function (wantedPersona, wantedPersonaArcana){
+      var index = 0;
+
+      while(wantedPersona.name != wantedPersonaArcana[index].name && index < wantedPersonaArcana.length){
+        index++
+      }
+
+      return index;
+    };
+
+    this.rareFusion = function ($scope, wantedPersonaArcana){
+
+      //wanted index
+      var wantedIndex = this.indexInArcana($scope.wantedPersona, wantedPersonaArcana);
+      var rareComboList = this.getRareCombosByArcana($scope.wantedPersona.arcana);
+
+      for(var i= 0; i < rareComboList.length; i++){
+        var indexShift = (-1) * rareComboList[i].result;
+        var parentIndex = wantedIndex;
+        var shift = (indexShift > 0) ? 1 : -1;
+
+        while(indexShift != 0 && parentIndex >= 0 && parentIndex < wantedPersonaArcana.length){
+          if( (parentIndex + shift) >= 0 && (parentIndex + shift) < wantedPersonaArcana.length){
+            if(wantedPersonaArcana[parentIndex + shift].name != $scope.wantedPersona.name && !wantedPersonaArcana[parentIndex + shift].special && !wantedPersonaArcana[parentIndex + shift].rare){
+              indexShift = indexShift - shift;
+            }
+          }
+          parentIndex = parentIndex + shift;
+        }
+
+        if(parentIndex >= 0 && parentIndex < wantedPersonaArcana.length){
+          var gemPersona = this.getPersonaByName($scope, rareComboList[i].gem);
+          $scope.recipes.push({'ingredients': [wantedPersonaArcana[parentIndex], gemPersona] });
+        }
+
+      }
+
+    };
+
     this.simpleFusion = function ($scope, personae1, personae2, wantedPersonaArcana){
       var averageLevel = 0;
       var closestPersona;
 
       for(var i= 0; i < personae1.length; i++){
-        for(var j= 0; j < personae2.length; j++){
-          if(!this.checkDuplicatesSimpleFusion(personae1[i].name, personae2[j].name, $scope.recipes)){
+        if (personae1[i].name != $scope.wantedPersona.name && !personae1[i].rare){
+          for(var j= 0; j < personae2.length; j++){
+            if (personae2[j].name != $scope.wantedPersona.name && !personae2[j].rare && personae2[j].name != personae1[i].name){
+              if(!this.checkDuplicatesSimpleFusion(personae1[i].name, personae2[j].name, $scope.recipes)){
 
-            averageLevel = ((personae1[i].level + personae2[j].level) / 2) + 1;
+                averageLevel = ((personae1[i].level + personae2[j].level) / 2) + 1;
 
-            if(averageLevel < $scope.wantedPersona.level){
-              closestPersona = this.closestPersonaUp(wantedPersonaArcana, averageLevel);
+                if(averageLevel < $scope.wantedPersona.level){
+                  closestPersona = this.closestPersonaUp(wantedPersonaArcana, averageLevel);
 
-              if (closestPersona.name == $scope.wantedPersona.name)
-                $scope.recipes.push({'ingredients': [personae1[i], personae2[j]] });
+                  if (closestPersona.name == $scope.wantedPersona.name)
+                    $scope.recipes.push({'ingredients': [personae1[i], personae2[j]] });
+                }
+              }
             }
           }
         }
@@ -184,15 +237,15 @@ module.exports = function service() {
       var closestPersona;
 
       for(var i= 0; i < personae1.length; i++){
-        if (personae1[i].name != $scope.wantedPersona.name){
+        if (personae1[i].name != $scope.wantedPersona.name && !personae1[i].rare){
           for(var j= 0; j < personae2.length; j++){
-            if (personae2[j].name != $scope.wantedPersona.name && personae2[j].name != personae1[i].name){
+            if (personae2[j].name != $scope.wantedPersona.name && !personae2[j].rare && personae2[j].name != personae1[i].name){
 
               if(!this.checkDuplicatesSimpleFusion(personae1[i].name, personae2[j].name, $scope.recipes)){
                 averageLevel = (personae1[i].level + personae2[j].level) / 2;
 
                   if(averageLevel > $scope.wantedPersona.level){
-                    closestPersona = this.closestPersonaDown(wantedPersonaArcana, averageLevel, personae1[i].name, personae2[j].name);
+                    closestPersona = this.closestPersonaDown(wantedPersonaArcana, averageLevel);
 
 
                     if (closestPersona.name == $scope.wantedPersona.name)
@@ -289,18 +342,26 @@ module.exports = function service() {
           }
         }
       
+      //prevent false results induced by special simple fusions
       if($scope.gameChosen == 'p5'){
+        // Barong + Rangda
         if($scope.wantedPersona.name == 'Moloch'){
           $scope.recipes.splice(55,1);
         }
 
+        // Shiva + Parvati
         if($scope.wantedPersona.name == 'Attis'){
           $scope.recipes.splice(39,1);
         }
 
+        // Nebiros + Belial
         if($scope.wantedPersona.name == 'Baphomet'){
           $scope.recipes.splice(290,1);
         }
+
+        // Compute rare fusion recipes here
+        this.rareFusion($scope, wantedPersonaArcana);
+
       } 
     };
 

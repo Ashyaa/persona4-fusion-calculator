@@ -8,11 +8,11 @@ body {
   color: $primary-color;
   background-color: yellow;
   // background: $background-image-url;
-    // -webkit-background-size: cover;
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
-    // background-size:100% auto;
-    // background-attachment: fixed;
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   -o-background-size: cover;
+  //   background-size:100% auto;
+  //   background-attachment: fixed;
 
 }
 
@@ -144,6 +144,8 @@ thead{
 }
 
 table.recipes {
+  float: none;
+  margin: 0 auto;
   margin-top: 10px;
 }
 
@@ -183,6 +185,15 @@ table.center-table {
   position: relative;
 }
 
+#mainFrame {
+  float: none;
+  margin: 0 auto;
+  padding: 10px 0px 10px;
+  background-color: rgba(222,222,222,0.8);
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
 #logo{
   position: absolute;
   width: 225px;
@@ -197,5 +208,5 @@ table.center-table {
 
 #backToList{
   position: absolute;
-  right: 1%;
+  right: -32%;
 }

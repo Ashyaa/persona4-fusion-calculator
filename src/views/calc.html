@@ -1,4 +1,4 @@
-<h3 id="backToList" ng_class="h3class">
+<h3 id="backToList">
 	<a ng-href="/#/">Back to the list</a>
 </h3> 
 
@@ -18,7 +18,8 @@
 	<span class="alert-success" ng-show="wantedPersona.dlc">Part of a purchasable DLC!</span>
 	<span class="glyphicon glyphicon-exclamation-sign alert-warning" ng-show="wantedPersona.rare" aria-hidden="true"></span>
 	<span class="alert-warning" ng-show="wantedPersona.rare">This persona can not be fused!</span>		
-</div>
+</div>	
+<div ng-hide="wantedPersona.note == null">{{wantedPersona.note}}</div>
 
 <div ng-show="pagesNumber >= 1" class="ng-show header" ng-init="pageNum = 0">	
 	<span ng-click="pageNum = 0" class="pagination">
@@ -45,15 +46,12 @@
 	</span>
 </div>
 
-<table class="col-md-12 container recipes">
+<table class="recipes">
 	<thead class="row">
 		<td class="col-xs-1">
 			<b>#</b>
 		</td>
-		<td class="col-xs-1">
-			<b>Cost</b>
-		</td>
-		<td class="col-xs-10">
+		<td class="col-xs-8">
 			<b>Ingredients</b>
 		</td>
 	</thead>
@@ -63,12 +61,9 @@
 					   limitTo: 100">
 			<td>
 				{{ pageNum * 100 + ($index + 1)}} 	
-			</td>
-			<td>tbd
-<!--			{{recipe.cost}} 	-->
 			</td>		
 			<td>
-				<table class="container">
+				<table class="">
 					<td ng-repeat="persona in recipe.ingredients | orderBy:'-level'" class="col-xs-1">
 						<a ng-href="#/persona/{{persona.name}}" ng-click="goTop()">{{persona.name}}</a>
 						<span ng-hide="wantedPersona.rare">({{persona.level}} / {{persona.arcana}})</span>

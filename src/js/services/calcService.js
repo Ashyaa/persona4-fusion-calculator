@@ -217,9 +217,9 @@ module.exports = function service() {
             if (personae2[j].name != $scope.wantedPersona.name && !personae2[j].rare && personae2[j].name != personae1[i].name){
               if(!this.checkDuplicatesSimpleFusion(personae1[i].name, personae2[j].name, $scope.recipes)){
 
-                averageLevel = ((personae1[i].level + personae2[j].level) / 2) + 1;
+                averageLevel = Math.floor(((personae1[i].level + personae2[j].level) / 2)) + 1;
 
-                if(averageLevel < $scope.wantedPersona.level){
+                if(averageLevel <= $scope.wantedPersona.level){
                   closestPersona = this.closestPersonaUp(wantedPersonaArcana, averageLevel);
 
                   if (closestPersona.name == $scope.wantedPersona.name)
@@ -242,7 +242,7 @@ module.exports = function service() {
             if (personae2[j].name != $scope.wantedPersona.name && !personae2[j].rare && personae2[j].name != personae1[i].name){
 
               if(!this.checkDuplicatesSimpleFusion(personae1[i].name, personae2[j].name, $scope.recipes)){
-                averageLevel = (personae1[i].level + personae2[j].level) / 2;
+                averageLevel = Math.floor(((personae1[i].level + personae2[j].level) / 2)) + 1;
 
                   if(averageLevel > $scope.wantedPersona.level){
                     closestPersona = this.closestPersonaDown(wantedPersonaArcana, averageLevel);

@@ -53,7 +53,7 @@ var personae = [
   {"arcana": "Emperor",     "level": 66,  "name": "Oberon",            },
   {"arcana": "Emperor",     "level": 75,  "name": "Baal",              },
   {"arcana": "Emperor",     "level": 82,  "name": "Odin",              'max': true, },
-  {"arcana": "Hierophant",  "level": 10,  "name": "Berith",            },
+  {"arcana": "Hierophant",  "level": 9,   "name": "Berith",            },
   {"arcana": "Hierophant",  "level": 17,  "name": "Orobas",            },
   {"arcana": "Hierophant",  "level": 22,  "name": "Feng Huang",        },
   {"arcana": "Hierophant",  "level": 25,  "name": "Anzu",              },
@@ -409,7 +409,7 @@ var rareCombos = [
         {"gem": "Orlov",                "result": +1,    },
         {"gem": "Emperor's Amulet",     "result": -1,    },
         {"gem": "Hope Diamond",         "result": +1,    },
-        {"gem": "Crystal Skull",        "result": -1,    },
+        {"gem": "Crystal Skull",        "result": +1,    },
     ], 
   },
   {"arcana": "Moon",  "comboList": [

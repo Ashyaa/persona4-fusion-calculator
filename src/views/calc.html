@@ -47,7 +47,7 @@
 </div>
 
 <table class="recipes">
-	<thead class="row">
+	<thead>
 		<td class="col-xs-1">
 			<b>#</b>
 		</td>
@@ -63,8 +63,8 @@
 				{{ pageNum * 100 + ($index + 1)}} 	
 			</td>		
 			<td>
-				<table class="">
-					<td ng-repeat="persona in recipe.ingredients | orderBy:'-level'" class="col-xs-1">
+				<table class="ingredients">
+					<td ng-repeat="persona in recipe.ingredients | orderBy:'-level'" class="testCol col-xs-1">
 						<a ng-href="#/persona/{{persona.name}}" ng-click="goTop()">{{persona.name}}</a>
 						<span ng-hide="wantedPersona.rare">({{persona.level}} / {{persona.arcana}})</span>
 						<span ng-show="wantedPersona.rare">Can't be fused!</span>

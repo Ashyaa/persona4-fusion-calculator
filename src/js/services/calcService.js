@@ -214,7 +214,7 @@ module.exports = function service() {
       for(var i= 0; i < personae1.length; i++){
         if (personae1[i].name != $scope.wantedPersona.name && !personae1[i].rare){
           for(var j= 0; j < personae2.length; j++){
-            if (personae2[j].name != $scope.wantedPersona.name && !personae2[j].rare && personae2[j].name != personae1[i].name){
+            if (personae2[j].name != $scope.wantedPersona.name && !personae2[j].rare){
               if(!this.checkDuplicatesSimpleFusion(personae1[i].name, personae2[j].name, $scope.recipes)){
 
                 averageLevel = Math.floor(((personae1[i].level + personae2[j].level) / 2)) + 1;
@@ -239,10 +239,10 @@ module.exports = function service() {
       for(var i= 0; i < personae1.length; i++){
         if (personae1[i].name != $scope.wantedPersona.name && !personae1[i].rare){
           for(var j= i + 1; j < personae2.length; j++){
-            if (personae2[j].name != $scope.wantedPersona.name && !personae2[j].rare && personae2[j].name != personae1[i].name){
+            if (personae2[j].name != $scope.wantedPersona.name && !personae2[j].rare){
 
               if(!this.checkDuplicatesSimpleFusion(personae1[i].name, personae2[j].name, $scope.recipes)){
-                averageLevel = Math.floor(((personae1[i].level + personae2[j].level) / 2)) + 1;
+                averageLevel = Math.floor(((personae1[i].level + personae2[j].level) / 2));
 
                 if(personae1[i].name == "Slime" && personae2[j].name == "Shiisaa"){
                   console.log("Average level = " + averageLevel);

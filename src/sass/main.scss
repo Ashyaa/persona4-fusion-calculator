@@ -207,8 +207,9 @@ table.center-table {
 }
 
 #backToList{
+  z-index: +1; 
   position: absolute;
-  right: -32%;
+  right: 1%;
 }
 
 .ingredients{

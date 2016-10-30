@@ -1,15 +1,9 @@
 'use strict';
 
-var calcCtrl = function($scope, $routeParams, calcService, $location, $anchorScroll) {
-  
-   if ($scope.gameChosen === 'p5'){
-        $scope.h3class = "p5text";
-   }else{
-        $scope.h3class = "p4text";
-   }
+var calcCtrl = function($rootScope, $scope, $routeParams, calcService, $location, $anchorScroll) {
 
    calcService.initialize($scope);
-
+     
    $scope.wantedPersona = calcService.getPersonaByName($scope, $routeParams.persona_name);
    
    $scope.recipes = [];
@@ -42,6 +36,9 @@ var calcCtrl = function($scope, $routeParams, calcService, $location, $anchorScr
 
       $anchorScroll();
     };
+
+    $rootScope.calcDisplayed = true;
+   
 };
 
 module.exports = calcCtrl;

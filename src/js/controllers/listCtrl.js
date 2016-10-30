@@ -1,7 +1,9 @@
 'use strict';
 
-var listCtrl = function($scope, $location, $anchorScroll) {
-     
+var listCtrl = function($rootScope, $scope, $location, $anchorScroll) {
+
+    $rootScope.calcDisplayed = false;
+
     $scope.goTop = function() {
 
       $location.hash('header');

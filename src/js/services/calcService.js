@@ -176,12 +176,12 @@ module.exports = function service() {
 
     this.rareFusion = function ($scope, wantedPersonaArcana){
 
-      //wanted index
       var wantedIndex = this.indexInArcana($scope.wantedPersona, wantedPersonaArcana);
       var rareComboList = this.getRareCombosByArcana($scope.wantedPersona.arcana);
 
       for(var i= 0; i < rareComboList.length; i++){
         var indexShift = (-1) * rareComboList[i].result;
+        var gemPersona = this.getPersonaByName($scope, rareComboList[i].gem);
         var parentIndex = wantedIndex;
         var shift = (indexShift > 0) ? 1 : -1;
 
@@ -189,16 +189,17 @@ module.exports = function service() {
           if( (parentIndex + shift) >= 0 && (parentIndex + shift) < wantedPersonaArcana.length){
             if(wantedPersonaArcana[parentIndex + shift].name != $scope.wantedPersona.name && !wantedPersonaArcana[parentIndex + shift].special && !wantedPersonaArcana[parentIndex + shift].rare){
               indexShift = indexShift - shift;
+            }else if ( (Math.abs(indexShift) == 1) && !wantedPersonaArcana[parentIndex + shift].rare){
+              //a skip in the last iterations creates a new recipe with the skipped persona if it's not rare
+              $scope.recipes.push({'ingredients': [wantedPersonaArcana[parentIndex + shift], gemPersona] });
             }
           }
           parentIndex = parentIndex + shift;
         }
 
         if(parentIndex >= 0 && parentIndex < wantedPersonaArcana.length){
-          var gemPersona = this.getPersonaByName($scope, rareComboList[i].gem);
           $scope.recipes.push({'ingredients': [wantedPersonaArcana[parentIndex], gemPersona] });
         }
-
       }
 
     };
